@@ -10,39 +10,46 @@ class AddressBookMain:
         new_contact = Contact()
         self.address_book.add_contact(new_contact)
 
+    def add_multiple_contacts(self):
+        self.address_book.add_multiple_contacts()
+
     def display_contacts(self):
         self.address_book.display_contacts()
 
     def edit_contact(self):
-        name = input("Enter the first or last name of the contact to edit: ")
+        name = input("-->> Enter the first or last name of the contact to edit: <<--")
         self.address_book.edit_contact(name)
 
     def delete_contact(self):
-        name = input("Enter the first or last name of the contact to delete: ")
+        name = input("-->> Enter the first or last name of the contact to delete: <<--")
         self.address_book.delete_contact(name)
 
 if __name__ == "__main__":
-    address_book = AddressBookMain()
+    address_book_main = AddressBookMain()
 
     while True:
-        print("\nOptions:")
+        print("\n-->> Options: <<--")
         print("1. Add Contact")
-        print("2. Display Contacts")
-        print("4. Delete Contacts")
-        print("5. Exit")
+        print("2. Add Multiple Contacts")
+        print("3. Display Contacts")
+        print("4. Edit Contact")
+        print("5. Delete Contact")
+        print("6. Exit")
 
-        choice = input("Enter your choice: ")
+        choice = input("-->> Enter your choice: <<--")
 
         if choice == "1":
-            address_book.add_contact()
+            address_book_main.add_contact()
         elif choice == "2":
-            address_book.display_contacts()
+            address_book_main.add_multiple_contacts()
         elif choice == "3":
-            address_book.edit_contact()
+            address_book_main.display_contacts()
         elif choice == "4":
-            address_book.delete_contact()
+            address_book_main.edit_contact()
         elif choice == "5":
-            print("Exiting Address Book. Goodbye!")
+            address_book_main.delete_contact()
+        elif choice == "6":
+            print(" == Exiting Address Book. Goodbye! ==")
             break
         else:
-            print("Invalid choice. Please try again.")
+            print("== Invalid choice. Please try again. ==")
