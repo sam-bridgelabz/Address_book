@@ -37,6 +37,8 @@ if __name__ == "__main__":
             address_book.add_contact()
         elif choice == "2":
             address_book.display_contacts()
+        elif choice == "3":
+            address_book.edit_contact()
         elif choice == "4":
             address_book.delete_contact()
         elif choice == "5":
