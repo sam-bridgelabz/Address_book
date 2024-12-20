@@ -28,3 +28,11 @@ class AddressBook:
                 print("Contact updated successfully!")
                 return
         print("Contact not found.")
+
+    def delete_contact(self, name):
+        for contact in self.contacts:
+            if contact.first_name.lower() == name.lower() or contact.last_name.lower() == name.lower():
+                self.contacts.remove(contact)
+                print("Contact deleted successfully!")
+                return
+        print("Contact not found.")
