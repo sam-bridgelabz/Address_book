@@ -1,10 +1,20 @@
+from contact import Contact
+
 class AddressBook:
     def __init__(self):
         self.contacts = []
 
     def add_contact(self, contact):
         self.contacts.append(contact)
-        print("Contact added successfully!")
+        print("== Contact added successfully! ==")
+
+    def add_multiple_contacts(self):
+        print("-->> Enter details for multiple contacts <<--")
+        choice = 'y'
+        while choice=='y':
+            contact=Contact()
+            self.add_contact(contact)
+            choice = input("Do you want to continue adding contact: press 'y' or 'n': ")
 
     def display_contacts(self):
         if not self.contacts:
@@ -16,7 +26,7 @@ class AddressBook:
     def edit_contact(self, name):
         for contact in self.contacts:
             if contact.first_name.lower() == name.lower() or contact.last_name.lower() == name.lower():
-                print("Contact found. Please enter new details:")
+                print("-->> Contact found. Please enter new details: <<--")
                 contact.first_name = input("Enter First Name: ")
                 contact.last_name = input("Enter Last Name: ")
                 contact.address = input("Enter Address: ")
@@ -27,12 +37,12 @@ class AddressBook:
                 contact.email = input("Enter Email: ")
                 print("Contact updated successfully!")
                 return
-        print("Contact not found.")
+        print("== Contact not found. ==")
 
     def delete_contact(self, name):
         for contact in self.contacts:
             if contact.first_name.lower() == name.lower() or contact.last_name.lower() == name.lower():
                 self.contacts.remove(contact)
-                print("Contact deleted successfully!")
+                print("== Contact deleted successfully! ==")
                 return
         print("Contact not found.")
