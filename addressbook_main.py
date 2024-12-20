@@ -28,6 +28,7 @@ if __name__ == "__main__":
         print("\nOptions:")
         print("1. Add Contact")
         print("2. Display Contacts")
+        print("3. Edit Contacts")
         print("4. Delete Contacts")
         print("5. Exit")
 
@@ -37,6 +38,8 @@ if __name__ == "__main__":
             address_book.add_contact()
         elif choice == "2":
             address_book.display_contacts()
+        elif choice == "3":
+            address_book.edit_contact()
         elif choice == "4":
             address_book.delete_contact()
         elif choice == "5":
